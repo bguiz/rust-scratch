@@ -1,0 +1,22 @@
+[package]
+
+name = "nickel-postgres-scratch"
+version = "0.0.0"
+authors = [ "bguiz" ]
+
+[[bin]]
+
+name = "nickel-postgres-scratch"
+path = "src/main.rs"
+
+[dependencies.nickel]
+
+git = "https://github.com/nickel-org/nickel.rs.git"
+
+[dependencies.rust-postgres]
+
+git = "https://github.com/sfackler/rust-postgres.git"
+
+[dependencies.lazy_static]
+
+git = "https://github.com/Kimundi/lazy-static.rs.git"
