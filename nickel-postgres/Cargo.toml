@@ -16,7 +16,3 @@ git = "https://github.com/nickel-org/nickel.rs.git"
 [dependencies.rust-postgres]
 
 git = "https://github.com/sfackler/rust-postgres.git"
-
-[dependencies.lazy_static]
-
-git = "https://github.com/Kimundi/lazy-static.rs.git"
