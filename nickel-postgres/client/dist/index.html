@@ -1,0 +1,78 @@
+<html>
+<body>
+    id:&nbsp;<input type="text" class="id" placeholder="id">
+    name:&nbsp;<input type="text" class="name" placeholder="name">
+    <br />
+    <button class="post">POST</button>
+    <button class="put">PUT</button>
+    <br />
+    <button class="get">GET</button>
+    <button class="delete">DELETE</button>
+    <p>Observe console output</p>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+    jQuery(document).ready(function() {
+        jQuery('.post').click(function() {
+            var name = jQuery('.name').val();
+            var url = '/api/person';
+            console.log('HTTP POST '+url);
+            jQuery.ajax({
+                type: 'POST',
+                url: url,
+                data: JSON.stringify({
+                    name: name,
+                }),
+            }).done(function(result) {
+                console.log(result);
+            }).fail(function(err) {
+                console.error(err);
+            });
+        });
+        jQuery('.put').click(function() {
+            var id = jQuery('.id').val();
+            var name = jQuery('.name').val();
+            var url = '/api/person';
+            console.log('HTTP PUT '+url);
+            jQuery.ajax({
+                type: 'PUT',
+                url: url,
+                data: JSON.stringify({
+                    id: id,
+                    name: name,
+                }),
+            }).done(function(result) {
+                console.log(result);
+            }).fail(function(err) {
+                console.error(err);
+            });
+        });
+        jQuery('.get').click(function() {
+            var id = jQuery('.id').val();
+            var url = '/api/person/'+id;
+            console.log('HTTP GET '+url);
+            jQuery.ajax({
+                type: 'GET',
+                url: url,
+            }).done(function(result) {
+                console.log(result);
+            }).fail(function(err) {
+                console.error(err);
+            });
+        });
+        jQuery('.delete').click(function() {
+            var id = jQuery('.id').val();
+            var url = '/api/person/'+id;
+            console.log('HTTP DELETE '+url);
+            jQuery.ajax({
+                type: 'DELETE',
+                url: url,
+            }).done(function(result) {
+                console.log(result);
+            }).fail(function(err) {
+                console.error(err);
+            });
+        });
+    });
+    </script>
+</body>
+</html>
