@@ -4,6 +4,7 @@ extern crate nickel;
 extern crate postgres;
 extern crate time;
 extern crate serialize;
+extern crate nickel_postgres;
 
 use std::io::net::ip::Ipv4Addr;
 use nickel::{ Nickel, Request, Response };
@@ -11,10 +12,9 @@ use postgres::pool::{ PostgresConnectionPool, PooledPostgresConnection };
 
 use serialize::json;
 
-use postgres_middleware::PostgresMiddleware;
+use nickel_postgres::PostgresMiddleware;
 use models::{ ServerMessage, Person, PersonByPost, PersonByPut };
 
-mod postgres_middleware;
 mod models;
 
 fn main() {

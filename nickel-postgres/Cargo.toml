@@ -16,3 +16,8 @@ git = "https://github.com/nickel-org/nickel.rs.git"
 [dependencies.rust-postgres]
 
 git = "https://github.com/sfackler/rust-postgres.git"
+
+[dependencies.nickel_postgres]
+
+git = "https://github.com/bguiz/nickel-postgres.git"
+rev = "feature/init"
